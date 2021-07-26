@@ -1,0 +1,75 @@
+@import "./variable.scss";
+
+/*通过该函数设置字体大小，后期方便统一管理；*/
+@mixin font_size($size){
+  font-size: $size;
+}
+// 不换行
+@mixin no-wrap(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+// 限制行数
+@mixin clamp($row){
+  overflow:hidden;
+  text-overflow:ellipsis;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:$row;
+}
+@mixin bg_app_color(){
+  background-color: $background-color-sub-theme;
+  [data-theme=theme1] & {
+    background-color: $background-color-sub-theme1;
+  }
+  [data-theme=theme] & {
+    background-color: $background-color-sub-theme;
+  }
+}
+@mixin bg_color(){
+  background-color: $background-color-theme;
+  [data-theme=theme1] & {
+    background-color: $background-color-theme1;
+  }
+  [data-theme=theme] & {
+    background-color: $background-color-theme;
+  }
+}
+@mixin pagination_color(){
+  background: $background-color-theme;
+  [data-theme=theme1] & {
+    background: $background-color-theme1;
+  }
+  [data-theme=theme] & {
+    background: $background-color-theme;
+  }
+}
+
+@mixin font_color(){
+  color: $font-color-theme;
+  [data-theme=theme1] & {
+    color: $font-color-theme1;
+  }
+  [data-theme=theme] & {
+    color: $font-color-theme;
+  }
+}
+@mixin font_active_color(){
+  color: $font-active-color-theme;
+  [data-theme=theme1] & {
+    color: $font-active-color-theme1;
+  }
+  [data-theme=theme] & {
+    color: $font-active-color-theme;
+  }
+}
+
+@mixin border_color(){
+  [data-theme=theme1] & {
+    border-color: $border-color-theme1;
+  }
+  [data-theme=theme] & {
+    border-color: $border-color-theme;
+  }
+}
